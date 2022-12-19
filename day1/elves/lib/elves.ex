@@ -17,7 +17,7 @@ defmodule Elves do
       |> String.trim()
       |> String.split("\n\n", trim: true)
     results = Enum.map(elves_calories, &Elf.calc/1)
-    IO.inspect results
+    IO.inspect Enum.max(results)
 
 
   end
