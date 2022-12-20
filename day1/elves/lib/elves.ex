@@ -20,13 +20,14 @@ defmodule Elves do
   end
 
   def calculate_all_elves(contents) do
-    elves_calories =
+    results =
       contents
       |> String.trim()
       |> String.split("\n\n", trim: true)
+      |> Enum.map(&Elf.calc/1)
+      |> Enum.max
 
-    results = Enum.map(elves_calories, &Elf.calc/1)
-    IO.inspect(Enum.max(results))
+    IO.inspect(results)
   end
 end
 
