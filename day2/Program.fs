@@ -7,24 +7,17 @@ type Play =
     | Scissors = 3
 
 let decryptTheirPlay (input: string):Play = 
+    match input with 
+        |"A" -> Play.Rock
+        |"B" -> Play.Paper
+        |"C" -> Play.Scissors
 
-    let map = Dictionary<string, Play>()
-
-    map.Add("A", Play.Rock)
-    map.Add("B", Play.Paper)
-    map.Add("C", Play.Scissors)
-
-    map.Item(input)
 
 let decryptMyPlay(input: string):Play = 
-
-    let map = Dictionary<string, Play>()
-
-    map.Add("X", Play.Rock)
-    map.Add("Y", Play.Paper)
-    map.Add("Z", Play.Scissors)
-
-    map.Item(input)
+    match input with 
+        |"X" -> Play.Rock
+        |"Y" -> Play.Paper
+        |"Z" -> Play.Scissors
 
 type Game = 
     { TheirPlay: Play
