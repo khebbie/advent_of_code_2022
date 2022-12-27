@@ -46,14 +46,14 @@ let filePath = "/src/elixir/advent_of_code/day2/input_real.txt"
 let fileContents = File.ReadAllText filePath
 
 let lines = fileContents.Split '\n'
-let map =
+let result =
     lines
     |> Array.filter (fun line -> line.Trim().Length > 0)
     |> Array.map (fun line -> decryptTheirPlay( line.[0].ToString()), decryptMyPlay( line.[2].ToString()))
     |> Array.map (fun encoded ->  {TheirPlay = fst(encoded); MyPlay = snd(encoded)})
     |> Array.map(fun game -> completeScore(game))
     |> Array.sum
-printfn "%d" map
+printfn "%d" result
 
 
 //printfn "%s" fileContents
