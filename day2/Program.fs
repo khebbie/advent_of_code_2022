@@ -1,5 +1,4 @@
-﻿open System.Collections.Generic
-open System.IO
+﻿open System.IO
 
 type Play =
     | Rock = 1
