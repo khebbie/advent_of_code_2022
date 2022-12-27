@@ -1,21 +1,10 @@
 ﻿open System.Collections.Generic
 open System.IO
 
-type System.Collections.Generic.Dictionary<'TKey, 'TValue> with
-    member this.TryGetValueAsOption (key: 'TKey):Option<'TValue> =
-        let found, value = this.TryGetValue(key)
-        if found then Some value else None
 type Play =
     | Rock = 1
     | Paper = 2
     | Scissors = 3
-
-let printOption (input: Option<Play>) = 
-    match input with
-    | Some v -> 
-        let value = System.Enum.GetName(typeof<Play>, v)
-        printfn "The Value: %s" value
-    | None -> printfn "None"
 
 let decryptTheirPlay (input: string):Play = 
 
@@ -37,15 +26,6 @@ let decryptMyPlay(input: string):Play =
 
     map.Item(input)
 
-let scoreForMyPlay(myPlay: Play) =
-    let map = Dictionary<Play, int>()
-
-    map.Add(Play.Rock, 1)
-    map.Add(Play.Paper, 2)
-    map.Add(Play.Scissors,3)
-
-    map.TryGetValueAsOption(myPlay)
-    
 type Game = 
     { TheirPlay: Play
       MyPlay: Play}
@@ -81,4 +61,4 @@ let map =
 printfn "%d" map
 
 
-printfn "%s" fileContents
+//printfn "%s" fileContents
