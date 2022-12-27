@@ -5,12 +5,14 @@ type Play =
     | Rock = 1
     | Paper = 2
     | Scissors = 3
+    
 
 let decryptTheirPlay (input: string):Play = 
     match input with 
         |"A" -> Play.Rock
         |"B" -> Play.Paper
         |"C" -> Play.Scissors
+        | _ -> failwith "unknown play"
 
 
 let decryptMyPlay(input: string):Play = 
@@ -18,6 +20,7 @@ let decryptMyPlay(input: string):Play =
         |"X" -> Play.Rock
         |"Y" -> Play.Paper
         |"Z" -> Play.Scissors
+        | _ -> failwith "unknown play"
 
 type Game = 
     { TheirPlay: Play
