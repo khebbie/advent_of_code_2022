@@ -16,6 +16,15 @@
       (apply clojure.set/intersection)
       ))
 
+(defn split-into-partitions [lines]
+  (->> lines
+  (map set)
+  (apply clojure.set/intersection)      
+))
+
+
+
+
 (defn letter-to-number [letter]
 (let [ch (char (first letter))]
     (cond
@@ -26,6 +35,7 @@
 (defn -main
   "solve day 3 of advent of code 2022"
   [& args]
+;; part #1
 (->> "/src/elixir/advent_of_code/day3/day3/input_real.txt"
      read-file
      str/split-lines
@@ -34,4 +44,14 @@
      (reduce +)
 (println)
      )
+;; part #2
+(->> "/src/elixir/advent_of_code/day3/day3/input_real.txt"
+    read-file
+    str/split-lines
+(partition-all 3)
+    (map split-into-partitions)
+   (map letter-to-number)
+     (reduce +)
+
+    (println))
   (println "done!"))
