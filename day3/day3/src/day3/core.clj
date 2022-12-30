@@ -17,12 +17,12 @@
       ))
 
 (defn letter-to-number [letter]
-  (def ch (char (first letter)))
- (cond
-   (Character/isLowerCase ch) (- (int ch) 96)
-   (Character/isUpperCase ch) (+ 26 (- (int ch) 64))
-   :else 0))
-
+(let [ch (char (first letter))]
+    (cond
+      (Character/isLowerCase ch) (- (int ch) 96)
+      (Character/isUpperCase ch) (+ 26 (- (int ch) 64))
+      :else 0)))
+  
 (defn -main
   "solve day 3 of advent of code 2022"
   [& args]
