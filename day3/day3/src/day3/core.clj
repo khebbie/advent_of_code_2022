@@ -22,9 +22,6 @@
   (apply clojure.set/intersection)      
 ))
 
-
-
-
 (defn letter-to-number [letter]
 (let [ch (char (first letter))]
     (cond
@@ -48,10 +45,9 @@
 (->> "/src/elixir/advent_of_code/day3/day3/input_real.txt"
     read-file
     str/split-lines
-(partition-all 3)
+    (partition-all 3)
     (map split-into-partitions)
-   (map letter-to-number)
+    (map letter-to-number)
      (reduce +)
-
     (println))
   (println "done!"))
