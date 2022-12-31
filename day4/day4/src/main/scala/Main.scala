@@ -1,10 +1,7 @@
 import scala.io.Source
 
 object Main extends App {
-  var fullyContainedCount = 0
-  var overlappedCount = 0
-  val filename = "/src/elixir/advent_of_code/day4/day4/input_real.txt"
-  for (line <- Source.fromFile(filename).getLines) {
+  def handleLine(line:String){
     val Array(range1, range2) = line
       .split(",")
       .map((range: String) => {
@@ -19,6 +16,13 @@ object Main extends App {
       overlappedCount = overlappedCount + 1
     }
 
+
+  }
+  var fullyContainedCount = 0
+  var overlappedCount = 0
+  val filename = "/src/elixir/advent_of_code/day4/day4/input_real.txt"
+  for (line <- Source.fromFile(filename).getLines) {
+    handleLine(line)
   }
 
   println(fullyContainedCount)
