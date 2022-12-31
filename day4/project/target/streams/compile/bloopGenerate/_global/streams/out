@@ -1,0 +1,4 @@
+[debug] [day4-build] Classpath dependencies List()
+[debug] [day4-build] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'day4-build' to '/src/elixir/advent_of_code/day4/project/.bloop/day4-build.json'
+[success] Generated .bloop/day4-build.json

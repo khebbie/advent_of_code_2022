@@ -1,0 +1,3 @@
+[debug] not up to date. inChanged = true, force = false
+[debug] Updating ProjectRef(uri("file:/src/elixir/advent_of_code/day4/project/project/"), "day4-build-build")...
+[debug] Done updating ProjectRef(uri("file:/src/elixir/advent_of_code/day4/project/project/"), "day4-build-build")
