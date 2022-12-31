@@ -1,7 +1,7 @@
 import scala.io.Source
 
 object Main extends App {
-  def handleLine(line: String)={
+  def lineToRanges(line: String)={
     line
       .split(",")
       .map((range: String) => {
@@ -14,7 +14,7 @@ object Main extends App {
   var overlappedCount = 0
   val filename = "/src/elixir/advent_of_code/day4/day4/input_real.txt"
   for (line <- Source.fromFile(filename).getLines) {
-    val Array(range1, range2) = handleLine(line)
+    val Array(range1, range2) = lineToRanges(line)
     if (range1.containsSlice(range2) || range2.containsSlice(range1)) {
       fullyContainedCount = fullyContainedCount + 1
     }
